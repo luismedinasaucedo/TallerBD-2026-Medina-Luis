@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario de Equipos | Control de Préstamos TI</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<header class="navbar">
+    <div class="navbar-contenedor">
+        <a href="index.html" class="marca">
+            <span class="marca-icono">TI</span>
+            <div class="marca-texto">
+                <h1>Control de Préstamos</h1>
+                <span>Soporte y Servicios Tecnológicos</span>
+            </div>
+        </a>
+        <button class="btn-menu-movil" id="btnMenuMovil" aria-label="Abrir menú">&#9776; Menú</button>
+        <ul class="nav-enlaces" id="navEnlaces">
+            <li><a href="index.html">Inicio y Consultas</a></li>
+<li><a href="prestamos.html">Préstamos y Devoluciones</a></li>
+<li><a href="equipos.html" class="activo">Equipos</a></li>
+<li><a href="solicitantes.html">Solicitantes</a></li>
+<li><a href="catalogos.html">Catálogos y Usuarios</a></li>
+        </ul>
+        <div class="nav-usuario">
+            <span class="usuario-activo">Sesión activa</span>
+            <a href="login.html" class="btn-cerrar-sesion">Cerrar sesión</a>
+        </div>
+    </div>
+</header>
+
+<main class="contenedor">
+    <div class="encabezado-seccion">
+        <div>
+            <h2>Control de Equipos Tecnológicos</h2>
+            <p>Alta individual por código de inventario, actualización de datos y gestión de estado operativo.</p>
+        </div>
+    </div>
+
+    <section class="panel">
+        <div class="panel-titulo">Registrar / Actualizar Equipo</div>
+
+        <!-- Desplegable para seleccionar un equipo existente si se necesita -->
+        <div class="selector-equipo-box">
+            <div class="campo">
+                <label for="selector_equipo_existente">Seleccionar equipo existente (opcional):</label>
+                <select id="selector_equipo_existente">
+                    <option value="">-- Nuevo equipo (llenar campos en blanco) --</option>
+                </select>
+            </div>
+        </div>
+
+        <form id="formEquipo" data-demo-form>
+            <input type="hidden" id="id_equipo_edit" name="id_equipo" value="">
+            <div class="form-grid">
+                <div class="campo">
+                    <label for="codigo_inventario">Código de Inventario (Único) *</label>
+                    <input type="text" id="codigo_inventario" name="codigo_inventario" placeholder="Ej. INV-LAP-001" required>
+                </div>
+                <div class="campo">
+                    <label for="numero_serie">Número de Serie (Opcional)</label>
+                    <input type="text" id="numero_serie" name="numero_serie" placeholder="Ej. SN-9948210A">
+                </div>
+                <div class="campo">
+                    <label for="id_categoria">Categoría *</label>
+                    <select id="id_categoria" name="id_categoria" required>
+                        <option value="">-- Seleccione categoría --</option>
+                    </select>
+                </div>
+                <div class="campo">
+                    <label for="descripcion">Descripción *</label>
+                    <input type="text" id="descripcion" name="descripcion" placeholder="Ej. Laptop para laboratorio" required>
+                </div>
+                <div class="campo">
+                    <label for="marca">Marca *</label>
+                    <input type="text" id="marca" name="marca" placeholder="Ej. Dell" required>
+                </div>
+                <div class="campo">
+                    <label for="modelo">Modelo *</label>
+                    <input type="text" id="modelo" name="modelo" placeholder="Ej. Latitude 5430" required>
+                </div>
+                <div class="campo">
+                    <label for="estado">Estado Operativo *</label>
+                    <select id="estado" name="estado" required>
+                        <option value="disponible">Disponible</option>
+                        <option value="mantenimiento">Mantenimiento</option>
+                        <option value="baja">Baja de inventario</option>
+                    </select>
+                    <span id="notaEstadoPrestado" class="nota-campo">
+                        Este equipo está prestado; su estado solo cambia al registrar la devolución.
+                    </span>
+                </div>
+                <div class="campo">
+                    <label for="condicion_fisica">Condición Física *</label>
+                    <input type="text" id="condicion_fisica" name="condicion_fisica" value="Óptima" required>
+                </div>
+            </div>
+            <div class="acciones-form">
+                <button type="submit" class="btn btn-primario">Guardar Equipo</button>
+                <button type="reset" class="btn btn-secundario" onclick="limpiarSeleccionEquipo()">Limpiar / Nuevo</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="panel">
+        <div class="panel-titulo">Listado General de Equipos Registrados</div>
+        <div class="barra-filtros">
+            <input type="text" placeholder="Buscar por código de inventario, serie, descripción, marca o modelo..." data-tabla-filtro="tablaEquipos">
+            <select data-tabla-estado="tablaEquipos">
+                <option value="">Todos los estados</option>
+                <option value="disponible">Disponible</option>
+                <option value="prestado">Prestado</option>
+                <option value="mantenimiento">Mantenimiento</option>
+                <option value="baja">Baja</option>
+            </select>
+        </div>
+        <div class="tabla-contenedor">
+            <table id="tablaEquipos">
+                <thead>
+                    <tr>
+                        <th>Inventario</th>
+                        <th>No. Serie</th>
+                        <th>Descripción</th>
+                        <th>Categoría</th>
+                        <th>Marca / Modelo</th>
+                        <th>Condición</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="fila-vacia">
+                        <td colspan="8">No hay equipos registrados todavía.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+<script src="js/app.js"></script>
+</body>
+</html>

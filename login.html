@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión | Control de Préstamos TI</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="login-pagina">
+
+    <div class="login-contenedor">
+        <div class="login-cabecera">
+            <span class="marca-icono">TI</span>
+            <h1>Control de Préstamos</h1>
+            <p>Departamento de Soporte y Servicios Tecnológicos</p>
+        </div>
+
+        <section class="panel">
+            <div class="panel-titulo">Iniciar Sesión</div>
+            <p style="font-size:0.88rem; color:var(--texto-secundario); margin-bottom:1rem;">
+                Ingresa tu usuario y contraseña asignados para acceder al sistema.
+            </p>
+            <form action="index.html">
+                <div class="form-grid" style="grid-template-columns: 1fr;">
+                    <div class="campo">
+                        <label for="login_user">Usuario</label>
+                        <input type="text" id="login_user" name="username" placeholder="Nombre de usuario" required>
+                    </div>
+                    <div class="campo">
+                        <label for="login_pass">Contraseña</label>
+                        <input type="password" id="login_pass" name="password" placeholder="••••••••" required>
+                    </div>
+                </div>
+                <div class="acciones-form">
+                    <button type="submit" class="btn btn-primario" style="width:100%;">Ingresar al Sistema</button>
+                </div>
+            </form>
+        </section>
+    </div>
+
+</body>
+</html>
