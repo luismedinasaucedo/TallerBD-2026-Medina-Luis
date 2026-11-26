@@ -1,3 +1,6 @@
+<?php
+require_once 'config/auth.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -22,12 +25,14 @@
 <li><a href="prestamos.html">Préstamos y Devoluciones</a></li>
 <li><a href="equipos.html">Equipos</a></li>
 <li><a href="solicitantes.html">Solicitantes</a></li>
-<li><a href="catalogos.html">Catálogos y Usuarios</a></li>
+<li><a href="catalogos.php">Catálogos y Usuarios</a></li>
         </ul>
         <div class="nav-usuario">
-            <span class="usuario-activo">Sesión activa</span>
-            <a href="login.html" class="btn-cerrar-sesion">Cerrar sesión</a>
-        </div>
+    <span class="usuario-activo">
+        <?= htmlspecialchars($_SESSION['nombre']) ?> (<?= htmlspecialchars($_SESSION['rol']) ?>)
+    </span>
+    <a href="logout.php" class="btn-cerrar-sesion">Cerrar sesión</a>
+</div>
     </div>
 </header>
 

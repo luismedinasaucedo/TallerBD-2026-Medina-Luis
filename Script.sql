@@ -4,11 +4,7 @@
 -- AVANCE 1: Estructura de Base de Datos (DDL), Claves y Relaciones
 -- ============================================================================
 
-CREATE DATABASE IF NOT EXISTS control_prestamos
-  CHARACTER SET utf8mb4
-  COLLATE utf8mb4_unicode_ci;
-
-USE control_prestamos;
+USE db_inventario_21;
 
 -- ----------------------------------------------------------------------------
 -- 1. TABLA: departamentos
