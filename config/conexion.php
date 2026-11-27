@@ -1,9 +1,8 @@
 <?php
-// Plantilla de conexión a MariaDB 
 $host = 'localhost';
 $db   = 'db_inventario';
-$user = 'USUARIO_DB';
-$pass = 'CONTRASENA_DB';
+$user = 'usrdb-01';
+$pass = 'm14pp';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset"; //Data Source Name
