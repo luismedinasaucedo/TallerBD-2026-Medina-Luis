@@ -12,7 +12,7 @@ require_once 'config/auth.php';
 <body>
 <header class="navbar">
     <div class="navbar-contenedor">
-        <a href="index.html" class="marca">
+        <a href="index.php" class="marca">
             <span class="marca-icono">TI</span>
             <div class="marca-texto">
                 <h1>Control de Préstamos</h1>
@@ -24,7 +24,7 @@ require_once 'config/auth.php';
             <li><a href="index.html" class="activo">Inicio y Consultas</a></li>
 <li><a href="prestamos.html">Préstamos y Devoluciones</a></li>
 <li><a href="equipos.html">Equipos</a></li>
-<li><a href="solicitantes.html">Solicitantes</a></li>
+<li><a href="solicitantes.php">Solicitantes</a></li>
 <li><a href="catalogos.php">Catálogos y Usuarios</a></li>
         </ul>
         <div class="nav-usuario">
