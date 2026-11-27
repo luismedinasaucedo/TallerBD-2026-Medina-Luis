@@ -23,7 +23,7 @@ require_once 'config/auth.php';
         <ul class="nav-enlaces" id="navEnlaces">
             <li><a href="index.html" class="activo">Inicio y Consultas</a></li>
 <li><a href="prestamos.html">Préstamos y Devoluciones</a></li>
-<li><a href="equipos.html">Equipos</a></li>
+<li><a href="equipos.php">Equipos</a></li>
 <li><a href="solicitantes.php">Solicitantes</a></li>
 <li><a href="catalogos.php">Catálogos y Usuarios</a></li>
         </ul>
