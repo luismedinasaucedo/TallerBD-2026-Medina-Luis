@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db   = 'db_inventario_21';
+$db   = 'db_inventario-21';
 $user = 'usrdb-21';
 $pass = 'm14pp';
 $charset = 'utf8mb4';
