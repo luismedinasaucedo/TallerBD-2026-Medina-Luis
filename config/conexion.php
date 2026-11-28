@@ -1,7 +1,7 @@
 <?php
 $host = 'localhost';
-$db   = 'db_inventario';
-$user = 'usrdb-01';
+$db   = 'db_inventario_21';
+$user = 'usrdb-21';
 $pass = 'm14pp';
 $charset = 'utf8mb4';
 
