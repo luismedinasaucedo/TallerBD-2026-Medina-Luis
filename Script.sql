@@ -4,7 +4,7 @@
 -- AVANCE 1: Estructura de Base de Datos (DDL), Claves y Relaciones
 -- ============================================================================
 
-USE 'db_inventario-21';
+USE `db_inventario-21`;
 
 -- ----------------------------------------------------------------------------
 -- 1. TABLA: departamentos
